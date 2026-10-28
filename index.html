@@ -83,15 +83,26 @@ h2{font-size:54px;letter-spacing:.06em;color:var(--cy);text-shadow:0 0 22px rgba
 @keyframes ringOut{to{transform:scale(34);opacity:0}}
 .m-flip{animation:mflip .8s cubic-bezier(.2,.8,.2,1) both}
 .m-ring{animation:mpop .5s .3s both}
-.m-term{animation:mterm .6s steps(12) both}
-.m-glitch{animation:mglitch .7s steps(7) both}
+.m-term{animation:mterm .35s steps(8) both}
+.m-term .row{animation:kfTermRow .4s steps(16) both;animation-delay:calc(var(--k)*.15s + .25s)}
+@keyframes kfTermRow{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0)}}
+.row ul{margin:8px 0 0 34px;font-size:29px;line-height:1.45;color:var(--t)}.row li{margin-top:6px}.row li::marker{color:var(--a)}
+#modal.closing{animation:mfadeOut .22s ease forwards}@keyframes mfadeOut{to{opacity:0}}
+#s5 .card{--a:var(--cy)}
+.s3.play .card.glitching{animation:kfClick .4s steps(8) both}
+.s3 .card{--g1:var(--vi)}
+@keyframes kfClick{0%{transform:none}15%{transform:translateX(-10px) skewX(-8deg);box-shadow:-8px 0 var(--g1,var(--rd)),8px 0 var(--cy)}35%{transform:translateX(9px) skewX(6deg);clip-path:inset(40% 0 20% 0)}55%{transform:translateX(-6px);clip-path:inset(0 0 55% 0)}75%{transform:translateX(4px);clip-path:inset(0)}100%{transform:none}}
+.m-glitch{animation:mzoom .45s ease both}
+.m-zoomc{animation:mglitchIn .55s steps(11) both}.m-zoomc #mt{animation:tGlitch .55s steps(11) both}
+@keyframes mglitchIn{0%{opacity:.2;transform:translateX(-26px) skewX(8deg);clip-path:inset(8% 0 62% 0)}15%{opacity:1;transform:translateX(20px);clip-path:inset(58% 0 6% 0)}30%{transform:translateX(-14px) skewX(-5deg);clip-path:inset(22% 0 38% 0)}45%{transform:translateX(10px);clip-path:inset(0 0 48% 0)}60%{transform:translateX(-6px);clip-path:inset(44% 0 0 0)}78%{transform:translateX(3px);clip-path:inset(0)}100%{transform:none;clip-path:inset(-80px)}}
+@keyframes tGlitch{0%,70%{text-shadow:-5px 0 var(--mg),5px 0 var(--cy)}100%{text-shadow:none}}
 .m-blur{animation:mblur .7s ease both}
 .m-wipe{animation:mwipe .7s ease both}
 .m-rise{animation:mrise .6s cubic-bezier(.2,.8,.2,1) both}
 @keyframes mflip{from{transform:perspective(1600px) rotateY(-100deg) scale(.5);opacity:0;filter:brightness(2.2)}}
 @keyframes mpop{from{opacity:0;transform:scale(.8)}}
 @keyframes mterm{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0)}}
-@keyframes mglitch{0%{transform:translateX(-16px) skewX(6deg);clip-path:inset(10% 0 55% 0)}25%{transform:translateX(12px);clip-path:inset(60% 0 5% 0)}50%{transform:translateX(-6px);clip-path:inset(20% 0 30% 0)}75%{transform:translateX(4px);clip-path:inset(0)}100%{transform:none}}
+@keyframes mzoom{from{opacity:0;transform:scale(.93)}}
 @keyframes mblur{from{opacity:0;filter:blur(18px);transform:scale(.9)}}
 @keyframes mwipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0)}}
 @keyframes mrise{from{opacity:0;transform:translateY(90px)}}
@@ -227,13 +238,10 @@ h2{font-size:54px;letter-spacing:.06em;color:var(--cy);text-shadow:0 0 22px rgba
  <div class="tx"><h2>CONCLUSION</h2><div class="bar"></div>
   <p class="d">Linux provides multiple mechanisms for protecting systems, managing access, and securing information. However, effective security also depends on proper configuration, timely updates, strong authentication, and responsible user practices.</p>
   <ul class="refs">
-   <li style="--i:0">Public link: <a href="https://littledemonrj.github.io/infographics/" target="_blank" rel="noopener">littledemonrj.github.io/infographics</a></li>
-   <li style="--i:1">GitHub repository: <a href="https://github.com/littledemonrj/infographics" target="_blank" rel="noopener">github.com/littledemonrj/infographics</a></li>
-   <li style="--i:2">GitHub profile: <a href="https://github.com/littledemorj" target="_blank" rel="noopener">github.com/littledemorj</a></li>
-   <li style="--i:3">Linux Kernel Documentation: <a href="https://www.kernel.org/doc/html/latest/" target="_blank" rel="noopener">kernel.org/doc/html/latest</a></li>
-   <li style="--i:4">Ubuntu Security: <a href="https://ubuntu.com/security" target="_blank" rel="noopener">ubuntu.com/security</a></li>
-   <li style="--i:5">SELinux Project: <a href="https://selinuxproject.org/" target="_blank" rel="noopener">selinuxproject.org</a></li>
-   <li style="--i:6">AppArmor: <a href="https://apparmor.net/" target="_blank" rel="noopener">apparmor.net</a></li></ul>
+   <li style="--i:0">Linux Kernel Documentation: <a href="https://www.kernel.org/doc/html/latest/" target="_blank" rel="noopener">kernel.org/doc/html/latest</a></li>
+   <li style="--i:1">Ubuntu Security: <a href="https://ubuntu.com/security" target="_blank" rel="noopener">ubuntu.com/security</a></li>
+   <li style="--i:2">SELinux Project: <a href="https://selinuxproject.org/" target="_blank" rel="noopener">selinuxproject.org</a></li>
+   <li style="--i:3">AppArmor: <a href="https://apparmor.net/" target="_blank" rel="noopener">apparmor.net</a></li></ul>
   <div class="names"><span>EUSEBIO</span><span>FAUSTINO</span><span>GONZAGA</span></div></div>
  <div class="vis"><svg viewBox="0 0 300 340" role="img" aria-label="Glowing shield surrounding the Tux penguin" class="pulse"><use href="#shieldlock"/><rect x="60" y="100" width="180" height="170" rx="30" fill="#02060F" opacity=".9"/><use href="#tux" x="82" y="108" width="136" height="163"/></svg></div>
 </section>
@@ -251,41 +259,44 @@ var ic=function(n){return '<svg class="ico" aria-hidden="true"><use href="#'+n+'
 var reduce=function(){return matchMedia('(prefers-reduced-motion: reduce)').matches};
 
 /* ===== Content (all original wording) ===== */
-var D2=[["System Protection","shield","Helps protect operating system resources.","The kernel controls access to memory, devices, and files, so ordinary programs cannot freely change critical system resources."],
-["Access Management","acl","Controls who can access files and services.","Accounts, groups, and permissions decide who may open files or use services. Example: only members of a project group can read a shared folder."],
-["Data Protection","data","Uses security mechanisms to help protect information.","Permissions, encrypted connections such as SSH, and regular backups help keep information private and recoverable."],
-["Secure Administration","admin","Encourages proper configuration and maintenance.","Careful setup, timely updates, and log review keep protections working over time."]];
-var D3=[["Multiuser System","users","Linux supports multiple user accounts, allowing users to have different permissions and access levels."],
+var D2=[["System Protection","shield","Helps protect operating system resources.","Helps protect operating system resources and system integrity."],
+["Access Management","acl","Controls who can access files and services.","Controls which users and processes can access particular files, services, and resources."],
+["Data Protection","data","Uses security mechanisms to protect information.","Uses security mechanisms to help protect information from unauthorized access or disclosure."],
+["Secure Administration","admin","Encourages proper configuration and maintenance.","Encourages proper configuration, privilege management, and regular maintenance."]];
+var D3=[["Multiuser System","users","Linux supports multiple user accounts with different permissions and access levels."],
 ["Permission-Based Access","perm","File and directory permissions determine who can read, write, or execute resources."],
 ["Open-Source Code","open","The source code can be inspected, modified, and improved by developers and the community."],
 ["Privilege Separation","sep","Ordinary user activities can be separated from administrative tasks to reduce unnecessary privileges."],
 ["Security Flexibility","flex","Linux supports configurable security policies, access controls, and additional protective tools."],
 ["Security Maintenance","upd","Supported Linux distributions provide security updates and fixes to address vulnerabilities."]];
 var D4=[["User and Group Permissions","grp","Controls how users and groups access files and directories.","Keeps files private and prevents accidental or unauthorized changes.","chmod 640 report.txt lets the owner read and write, the group read, and others nothing."],
-["Authentication","key","Verifies user identity before granting access to protected accounts or services.","Makes sure only verified users reach protected accounts or services.","Logging in over SSH with a key pair instead of a password."],
+["Authentication","key","Verifies a user's identity before granting access to protected accounts or services.","Makes sure only verified users reach protected accounts or services.","Logging in over SSH with a key pair instead of a password."],
 ["Access Control","acl","Restricts users and processes to resources they are permitted to use.","Limits the damage a user or program can do.","A web server process may read its site files but not users' home folders."],
 ["Firewall Protection","fw","Filters network traffic according to configured security rules.","Blocks unwanted connections and allows only intended traffic.","Allowing SSH while denying other incoming connections."],
 ["Security Updates","upd","Provides fixes for known vulnerabilities and improves system security.","Closes weaknesses before attackers can exploit them.","Running sudo apt update and sudo apt upgrade on Ubuntu."],
-["Process Isolation","iso","Helps limit interactions between processes and restrict access to resources.","Contains faults or malicious code inside a single process.","A crashing program cannot read the memory of another program."]];
-var D5=[["SELinux","se","Enforces security policies that restrict what processes can access.","The command getenforce shows whether SELinux is Enforcing, Permissive, or Disabled."],
-["AppArmor","aa","Applies application-specific security profiles to limit application capabilities.","The command sudo aa-status lists the profiles that are currently loaded."],
-["UFW","fw","Provides a simplified interface for managing firewall rules.","The command sudo ufw allow ssh permits incoming SSH connections."],
-["SSH","ssh","Supports encrypted remote login and secure communication with remote systems.","The command ssh user@server opens an encrypted remote session."],
-["File Permissions","perm","Control read, write, and execute access for users and groups.","The command ls -l shows permissions such as -rw-r-----."],
-["System Updates","upd","Help deliver security fixes and improvements through the Linux distribution's package management system.","The command sudo apt upgrade installs available updates on Debian-based systems."]];
-var D6=[["Malware","mal","Malicious software that may damage systems, steal information, or disrupt operations.","It can delete or encrypt files, run unwanted processes, or send data to an attacker.","Install software only from trusted repositories and keep it updated."],
-["Phishing","ph","Fraudulent messages or websites designed to trick people into revealing sensitive information.","A user may give away login details, which lets an attacker reach Linux accounts or servers.","Check the sender and the link before entering any credentials."],
-["Unauthorized Access","acl","Access to systems, accounts, or information without proper permission.","An intruder can read, change, or delete files and misuse system resources.","Apply least privilege and require strong authentication."],
-["Weak Passwords","pw","Easy-to-guess or reused passwords that increase the risk of account compromise.","Attackers can guess a weak password, or reuse one leaked elsewhere, to log in.","Use long, unique passwords and enable multi-factor authentication."],
-["Network Attacks","net","Attempts to exploit network services, communication, or system weaknesses.","Exposed or outdated services can be exploited to gain access or disrupt the system.","Close unused ports, configure a firewall, and patch services."]];
-var D7=[["Use strong, unique passwords.","Long, unique passwords are hard to guess, and one leak does not expose every account."],
-["Enable multi-factor authentication when supported.","A second factor still protects the account if a password is stolen."],
-["Install security updates regularly.","Updates fix known vulnerabilities that attackers actively look for."],
-["Follow the principle of least privilege.","Users and programs with fewer rights can do less damage if they are compromised."],
-["Avoid unnecessary root access.","Root can change anything, so using it only when needed limits mistakes and abuse."],
-["Configure firewall rules appropriately.","Rules allow the traffic you need and block the rest, which reduces exposed services."],
-["Install software from trusted repositories.","Official repositories provide vetted, signed packages, which lowers the risk of malware."],
-["Monitor system logs and back up important data.","Logs reveal suspicious activity, and backups let you recover from loss or attack."]];
+["Process Isolation","iso","Helps limit interactions between processes and restricts access to resources.","Contains faults or malicious code inside a single process.","A crashing program cannot read the memory of another program."]];
+/* Tools and threats: one entry per card, found again by its unique id when clicked */
+var TOOLS=[
+{id:"selinux",icon:"se",title:"SELinux",full:"Security-Enhanced Linux",meaning:"SELinux is a Linux security mechanism that enforces mandatory access control policies to restrict what users and processes can access.",purpose:"Adds an extra layer of access restrictions beyond ordinary file permissions.",example:"A web server process can be restricted from accessing files that are not permitted by its security policy."},
+{id:"apparmor",icon:"aa",title:"AppArmor",full:"",meaning:"AppArmor is a Linux security module that confines applications using security profiles.",purpose:"Limits the files, capabilities, and resources an application is allowed to access.",example:"An application's AppArmor profile can restrict its access to certain system files."},
+{id:"ufw",icon:"fw",title:"UFW",full:"Uncomplicated Firewall",meaning:"UFW is a tool that simplifies the configuration of firewall rules on supported Linux systems.",purpose:"Helps administrators control incoming and outgoing network connections.",example:"An administrator can configure a rule to allow SSH connections on port 22."},
+{id:"ssh",icon:"ssh",title:"SSH",full:"Secure Shell",meaning:"SSH is a protocol for securely connecting to and managing a remote computer over an unsecured network.",purpose:"Protects remote login sessions and communications through encryption and authentication.",example:"An administrator can connect to a Linux server using an SSH client."},
+{id:"fileperms",icon:"perm",title:"File Permissions",full:"",meaning:"Linux file permissions determine which users and groups can read, write, or execute files and directories.",purpose:"Helps prevent unauthorized users from modifying or accessing protected resources.",example:"A private file can be configured so only its owner can read and modify it."},
+{id:"updates",icon:"upd",title:"System Updates",full:"",meaning:"System updates deliver software improvements, bug fixes, and security patches through the Linux distribution's update system.",purpose:"Help fix known vulnerabilities and keep software maintained.",example:"An Ubuntu user installs available security updates through the system's package manager."}];
+var THREATS=[
+{id:"malware",icon:"mal",title:"Malware",meaning:"Malware is software designed to harm a system, disrupt operations, spy on users, or access information without authorization.",impact:"It may compromise files, accounts, applications, or system availability.",tips:["Install software from trusted sources.","Keep the operating system and applications updated.","Use appropriate security tools.","Avoid opening suspicious attachments."]},
+{id:"phishing",icon:"ph",title:"Phishing",meaning:"Phishing is a social engineering attack in which fraudulent messages or websites try to trick people into revealing sensitive information.",impact:"An attacker may obtain passwords, account details, or other private information.",tips:["Verify links and sender identities.","Avoid entering passwords on suspicious websites.","Enable multi-factor authentication when available.","Report suspicious messages."]},
+{id:"unauthorized",icon:"acl",title:"Unauthorized Access",meaning:"Unauthorized access occurs when someone accesses a system, account, or resource without permission.",impact:"It may expose private information or allow unwanted changes to system settings and files.",tips:["Use strong, unique passwords.","Apply appropriate user permissions.","Disable unnecessary accounts and services.","Review login activity and system logs."]},
+{id:"weakpass",icon:"pw",title:"Weak Passwords",meaning:"Weak passwords are easy to guess, commonly used, or reused across multiple accounts.",impact:"They increase the risk of account compromise.",tips:["Use long, unique passwords.","Use a reputable password manager when appropriate.","Enable multi-factor authentication when available.","Avoid reusing important account passwords."]},
+{id:"network",icon:"net",title:"Network Attacks",meaning:"Network attacks attempt to disrupt network services, intercept communications, or exploit weaknesses in connected systems.",impact:"They may cause service interruptions, unauthorized access, or information exposure.",tips:["Configure firewall rules appropriately.","Keep network-facing services updated.","Disable unnecessary network services.","Use encrypted connections and secure protocols."]}];
+var D7=[["Strong Passwords","shield","Use long, unique passwords for important accounts.","Long, unique passwords are hard to guess, and one leak does not expose every account."],
+["Multi-Factor Authentication","shield","Enable additional verification when supported.","A second factor still protects the account if a password is stolen."],
+["Regular Updates","shield","Install security fixes and supported software updates promptly.","Updates fix known vulnerabilities that attackers actively look for."],
+["Least Privilege","shield","Give users and applications only the permissions they need.","Users and programs with fewer rights can do less damage if they are compromised."],
+["Avoid Unnecessary Root Access","shield","Use administrative privileges only when required.","Root can change anything, so using it only when needed limits mistakes and abuse."],
+["Firewall Configuration","shield","Configure firewall rules to permit only necessary network traffic.","Rules allow the traffic you need and block the rest, which reduces exposed services."],
+["Trusted Software Sources","shield","Install software from trusted repositories and verified sources.","Official repositories provide vetted, signed packages, which lowers the risk of malware."],
+["Monitoring and Backups","shield","Review system logs and maintain backups of important data.","Logs reveal suspicious activity, and backups let you recover from loss or attack."]];
 var D8=[["Servers and Cloud Infrastructure","srv","Linux is widely used to operate web servers, cloud services, and other network infrastructure.","A web server hosting a website behind a firewall, with SSH key login for administrators."],
 ["Cybersecurity and Security Testing","shield","Linux distributions and tools are used for system administration, security analysis, and authorized penetration testing.","An administrator reviewing network traffic, or testing a system they are authorized to assess."],
 ["Embedded Systems and IoT","chip","Linux can run on supported embedded devices, industrial systems, and some Internet of Things platforms.","A network router or an industrial controller running a Linux-based system."],
@@ -294,12 +305,11 @@ var D8=[["Servers and Cloud Infrastructure","srv","Linux is widely used to opera
 /* ===== Modal handling ===== */
 var modal=$('#modal'),mp=$('#mp'),openCard=null;
 var isOpen=function(){return modal.classList.contains('open')};
-function closeM(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');if(openCard){openCard.setAttribute('aria-expanded','false');openCard.focus();openCard=null}}
-function typeText(el,text,delay){ /* terminal-style typing */
- if(reduce()){el.textContent=text;return}
- var i=0,st=null;el.textContent='';
- (function step(ts){if(!el.isConnected||!isOpen())return;if(st===null)st=ts;var n=Math.floor((ts-st-delay)/18);
-  if(n>i){i=Math.min(n,text.length);el.textContent=text.slice(0,i)}if(i<text.length)requestAnimationFrame(step)})(performance.now());
+var closing=false,pend=null;
+function closeM(){ /* fades out, then restores focus to the card that opened it */
+ if(!isOpen()||closing)return;closing=true;var card=openCard;openCard=null;
+ function done(){modal.classList.remove('open','closing');modal.setAttribute('aria-hidden','true');closing=false;if(card){card.setAttribute('aria-expanded','false');card.focus()}}
+ if(reduce()){done();return}modal.classList.add('closing');setTimeout(done,230);
 }
 function ring(b){ /* expanding neon ring from the clicked card */
  var sr=$('#stage').getBoundingClientRect(),cr=b.getBoundingClientRect(),s=sr.width/1920,r=document.createElement('i');
@@ -307,14 +317,19 @@ function ring(b){ /* expanding neon ring from the clicked card */
  modal.appendChild(r);setTimeout(function(){r.remove()},950);
 }
 function openM(b,n,title,icon,rows,mode){
+ if(closing)return;
+ if(!title||!rows||!rows.length){console.warn('Missing popup content');return} /* never open an empty modal */
  if(openCard===b&&isOpen()){closeM();return}
  openCard=b;b.setAttribute('aria-expanded','true');
  var acc=mode==='glitch'?['var(--rd)','var(--mg)']:['var(--cy)','var(--bl)','var(--vi)','var(--mg)'];
  mp.className='m-'+mode;mp.style.setProperty('--a',acc[n%acc.length]);
  $('#mi').innerHTML='<use href="#'+icon+'"/>';$('#mt').textContent=title;
  var R=$('#mr');R.innerHTML='';
- rows.forEach(function(r,k){var d=document.createElement('div');d.className='row';d.innerHTML='<b></b><p></p>';d.firstChild.textContent=(mode==='term'?'$ ':'')+r[0];R.appendChild(d);
-  if(mode==='term')typeText(d.lastChild,r[1],700+k*900);else d.lastChild.textContent=r[1]});
+ rows.forEach(function(r,k){var d=document.createElement('div'),lb=document.createElement('b'),body;d.className='row';d.style.setProperty('--k',k);
+  lb.textContent=(mode==='term'?'$ ':'')+r[0];
+  if(Array.isArray(r[1])){body=document.createElement('ul');r[1].forEach(function(t){var li=document.createElement('li');li.textContent=t;body.appendChild(li)})}
+  else{body=document.createElement('p');body.textContent=r[1]}
+  d.appendChild(lb);d.appendChild(body);R.appendChild(d)}); /* content is filled in BEFORE the modal becomes visible */
  modal.classList.add('open');modal.setAttribute('aria-hidden','false');
  if(mode==='ring'&&!reduce())ring(b);
  $('#mx').focus();
@@ -328,15 +343,30 @@ function cards(host,data,mode,opt){
   var b=document.createElement('button');b.className=(opt&&opt.cls)||'card';b.style.setProperty('--i',n);
   b.setAttribute('aria-haspopup','dialog');b.setAttribute('aria-expanded','false');
   b.innerHTML=(opt&&opt.html?opt.html(d):ic(d[1])+'<h3>'+d[0]+'</h3>');
-  b.onclick=function(){openM(b,n,d[0],d[1],opt.rows(d),mode)};H.appendChild(b)});
+  b.onclick=function(){
+   function show(){pend=null;b.classList.remove('glitching');openM(b,n,d[0],d[1],opt.rows(d),mode)}
+   if(opt.glitch&&!reduce()){clearTimeout(pend);H.querySelectorAll('.glitching').forEach(function(x){x.classList.remove('glitching')});b.classList.add('glitching');pend=setTimeout(show,400)}else show()};
+  H.appendChild(b)});
 }
-cards('#c2a',D2.slice(0,2),'blur',{html:function(d){return ic(d[1])+'<div><h3 style="font-size:24px">'+d[0]+'</h3><small>'+d[2]+'</small></div>'},rows:function(d){return [['More information',d[3]]]}});
-cards('#c2b',D2.slice(2),'blur',{html:function(d){return ic(d[1])+'<div><h3 style="font-size:24px">'+d[0]+'</h3><small>'+d[2]+'</small></div>'},rows:function(d){return [['More information',d[3]]]}});
-cards('#g3',D3,'flip',{rows:function(d){return [['Explanation',d[2]]]}});
-cards('#g4',D4,'ring',{rows:function(d){return [['Definition',d[2]],['Purpose',d[3]],['Example',d[4]]]}});
-cards('#g5',D5,'term',{rows:function(d){return [['Purpose',d[2]],['Example',d[3]]]}});
-cards('#g6',D6,'glitch',{rows:function(d){return [['What it means',d[2]],['Effect on Linux',d[3]],['Prevention tip',d[4]]]}});
-cards('#g7',D7,'wipe',{cls:'rec',html:function(d){return '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m7 12.5 3.5 3.5L17 9"/></svg><span>'+d[0]+'</span>'},rows:function(d){return [['Why it matters',d[1]]]}});
+/* Builds cards from id-keyed data; the popup is filled from the entry matching the clicked card's data-id */
+function dataCards(host,list,mode,rowsOf){
+ var H=$(host);
+ list.forEach(function(d,n){
+  var b=document.createElement('button'),h=document.createElement('h3');b.className='card';b.dataset.id=d.id;b.style.setProperty('--i',n);
+  b.setAttribute('aria-haspopup','dialog');b.setAttribute('aria-expanded','false');b.innerHTML=ic(d.icon);h.textContent=d.title;b.appendChild(h);
+  b.onclick=function(){
+   var e=list.filter(function(x){return x.id===b.dataset.id})[0];if(!e)return;
+   function show(){pend=null;b.classList.remove('glitching');openM(b,n,e.title,e.icon,rowsOf(e),mode)}
+   show(); /* threat popups open straight away: the click glitch is only used on the Characteristics cards */
+  };H.appendChild(b)});
+}
+cards('#c2a',D2.slice(0,2),'blur',{html:function(d){return ic(d[1])+'<div><h3 style="font-size:24px">'+d[0]+'</h3><small>'+d[2]+'</small></div>'},rows:function(d){return [['Meaning',d[3]]]}});
+cards('#c2b',D2.slice(2),'blur',{html:function(d){return ic(d[1])+'<div><h3 style="font-size:24px">'+d[0]+'</h3><small>'+d[2]+'</small></div>'},rows:function(d){return [['Meaning',d[3]]]}});
+cards('#g3',D3,'zoomc',{glitch:true,rows:function(d){return [['Explanation',d[2]]]}});
+cards('#g4',D4,'ring',{rows:function(d){return [['Meaning',d[2]],['Purpose',d[3]],['Example',d[4]]]}});
+dataCards('#g5',TOOLS,'term',function(d){var r=[];if(d.full)r.push(['Full name',d.full]);r.push(['Meaning',d.meaning],['Purpose',d.purpose],['Example',d.example]);return r});
+dataCards('#g6',THREATS,'glitch',function(d){return [['Meaning',d.meaning],['Possible impact',d.impact],['Prevention tips',d.tips]]});
+cards('#g7',D7,'wipe',{cls:'rec',html:function(d){return '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m7 12.5 3.5 3.5L17 9"/></svg><span>'+d[0]+'</span>'},rows:function(d){return [['Recommendation',d[2]],['Why it matters',d[3]]]}});
 cards('#g8',D8,'rise',{html:function(d){return ic(d[1])+'<h3>'+d[0]+'</h3>'},rows:function(d){return [['Description',d[2]],['Example',d[3]]]}});
 /* place the four network cards around the central hub */
 [[100,250],[1180,250],[100,640],[1180,640]].forEach(function(p,i){var c=$('#g8').children[i];c.style.left=p[0]+'px';c.style.top=p[1]+'px';c.style.setProperty('--i',i)});
@@ -346,7 +376,7 @@ var S=document.querySelectorAll('.slide'),cur=0,N=S.length,dots=$('#dots');
 S.forEach(function(s,i){var b=document.createElement('button');b.setAttribute('aria-label','Go to slide '+(i+1));b.onclick=function(){go(i)};dots.appendChild(b)});
 function play(el){el.classList.remove('play');void el.offsetWidth;el.classList.add('play')} /* replays this slide's own entrance animation */
 function go(n){
- n=Math.max(0,Math.min(N-1,n));if(isOpen())closeM();
+ n=Math.max(0,Math.min(N-1,n));clearTimeout(pend);document.querySelectorAll('.glitching').forEach(function(x){x.classList.remove('glitching')});if(isOpen())closeM();
  S[cur].classList.remove('on','play');cur=n;S[cur].classList.add('on');play(S[cur]);
  $('#prev').disabled=cur===0;$('#next').disabled=cur===N-1;$('#cnt').textContent=(cur+1)+' / '+N;
  dots.querySelectorAll('button').forEach(function(d,i){d.classList.toggle('on',i===cur);d.setAttribute('aria-current',i===cur?'true':'false')});
